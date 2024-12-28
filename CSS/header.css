@@ -1,0 +1,218 @@
+:root {
+    --secundary-color: #003366;
+    --primary-color: #253677;
+    --text-color: #FFFFFF;
+    --text-hover-color: #000000;
+    --title-h1: 2.5em;
+    --title-h2: 2em;
+    --title-h3: 1.75em;
+    --paragraph: 1.3em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../IMG/Conjunto_residencial.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed; /* Esta propiedad hace que la imagen de fondo sea fija */
+}
+
+header{
+    background-color: var(--primary-color);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed; /* Cambiado a fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Estilos para el header */
+.header {
+    width: 60%;
+    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Logo dentro del header */
+.logo img {
+    height: 100%; /* Ajusta el tamaño del logo */
+}
+
+/* Estilos para el icono del menú en dispositivos móviles */
+#abrir, #cerrar {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+    display: none; /* Se mostrará solo en móviles */
+}
+
+/* Menú de navegación */
+#navegation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: end;
+}
+
+#menu-list {
+    display: flex;
+    list-style-type: none;
+}
+
+.items {
+    position: relative;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.items:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: 4px solid white;
+}
+
+.items a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para el submenú */
+.submenu-parent:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    list-style-type: none;
+}
+
+.submenu li {
+    margin: 5px 0;
+    width: 100%;
+}
+
+.submenu li a {
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+.submenu li:hover {
+    background-color: rgba(255, 255, 255, .1);
+    border-bottom: 4px solid white;
+}
+
+/* Cambia el logo cuando se hace scroll */
+body.scrolled .header {
+    background-color: #222; /* Cambio de fondo al hacer scroll */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Aumenta la sombra */
+}
+
+/* Media Query para laptops */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .header {
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+/* Media Query para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header {
+        width: 80%;
+    }
+}
+
+/* Media Query para celulares */
+@media (max-width: 767px) {
+    .header {
+        width: 80%;
+    }
+
+    #navegation {
+        display: none; /* Oculta el menú en móviles por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        bottom: 0;
+        height: 100vh;
+        background-color: var(--primary-color);
+        padding: 2em;
+    }
+
+    #abrir {
+        display: block; /* Muestra el botón de abrir menú */
+    }
+
+    #menu-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .items {
+        padding: auto;
+        width: 100%;
+        align-items: end;
+    }
+
+    #navegation li{
+        width: 100%;
+    }
+
+    .items a{
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .submenu {
+        position: static;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        margin-top: 10px;
+    }
+
+    .submenu li a{
+        width: 100%;
+        text-align: center;
+    }
+
+    .activate{
+        background-color: rgba(255, 255, 255, .1);
+        border-bottom: 4px solid white;
+    }
+
+    .submenu-parent:hover .submenu {
+        display: none; /* Desactiva el hover en submenús para móviles */
+    }
+
+    #navegation.open {
+        display: block; /* Muestra el menú cuando está abierto */
+    }
+}

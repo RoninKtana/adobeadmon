@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #003366;
+    --secundary-color: #4169E1;
+    --button-color: #87CEEB;
+    --fondo-color: #B0E0E6;
+    --text-color: #FFFFFF;
+    --text-hover-color: #000000;
+}
+
+footer h3{
+    margin: 10px;
+}
+
+footer{
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#footer{
+    width: 60%;
+    display: grid;
+    grid-row: 150px 20px;
+    grid-template-areas: 
+        "contacto-privacidad"
+        "marca-registrada";
+    height: 100%;
+}
+
+#contacto-privacidad{
+    grid-area: contacto-privacidad;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "redes"
+        "privacidad"
+        "contacto";
+    gap: 5px;
+}
+
+#redes{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#container-icon a{
+    margin: 0 10px;
+}
+
+#redes #container-icon .icon{
+    width: 40px
+}
+
+#privacidad{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#privacidad a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#contacto{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contacto span{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    margin: 3px;
+}
+
+#contacto span img{
+    margin-right: 5px;
+}
+
+#contacto span a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+#contacto .icon{
+    width: 27px;
+}
+
+#marca-registrada{
+    text-align: center;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+/* Media Query para laptops */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    #footer{
+        width: 80%;
+    }
+}
+
+/* Media Query para tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #footer{
+        width: 100%;
+        padding: 10px;
+    }
+
+    #contacto span{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 3px;
+    }
+}
+
+/* Media Query para celulares */
+@media (max-width: 767px) {
+    footer{
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    #footer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    #menu-toggle:checked ~ footer {
+        display: none; /* Oculta el footer cuando el #menu-toggle está activado */
+    }
+
+    #contacto-privacidad{
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    #redes{
+        margin-bottom: 10px;
+    }
+
+    #privacidad{
+        margin-bottom: 10px;
+    }
+
+    #contacto{
+        align-items: center;
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contacto span{
+        width: 50%;
+    }
+}

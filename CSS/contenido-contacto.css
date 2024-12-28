@@ -1,0 +1,232 @@
+:root {
+    --secundary-color: #003366;
+    --primary-color: #253677;
+    --text-color: #FFFFFF;
+    --text-hover-color: #000000;
+    --title-h1: 1.8em;
+    --title-h2: 1.6em;
+    --title-h3: 1.4em;
+    --paragraph: 1.2em;
+}
+
+main {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/*------------------------------------------------*/
+/*--------------------carousel--------------------*/
+/*------------------------------------------------*/
+
+.introduction {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    width: 100vh;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100vh;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir el contenedor, manteniendo la proporción */
+    object-position: center;
+    /* Centra la imagen en el contenedor */
+}
+
+.nombre {
+    width: 100vh;
+    background-color: rgba(97, 77, 77, 0.562);
+    position: absolute;
+}
+
+.nombre h1 {
+    font-size: 4em;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+/*------------------------------------------------*/
+/*----------------------Contacto------------------*/
+/*------------------------------------------------*/
+
+.contacto {
+    width: 60%;
+    margin: 2em 0;
+    border-top: 1px solid black;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.form-container {
+    margin: 2em 0;
+    background: linear-gradient(135deg, #003E7C, #0073CF, #9ACFFF);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 100%;
+    color: #ffffff;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.form-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ffffff;
+    color: #0073CF;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.form-container button:hover {
+    background: #0056b3;
+    color: #ffffff;
+}
+
+.form-container p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+
+/*------------------------------------------------*/
+/*------------Media Query para laptops------------*/
+/*------------------------------------------------*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*----------------------Contacto------------------*/
+    .contacto {
+        width: 80%;
+    }
+}
+
+
+
+
+/*------------------------------------------------*/
+/*------------Media Query para tablets------------*/
+/*------------------------------------------------*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*----------------------Contacto------------------*/
+    .contacto {
+        width: 80%;
+    }
+}
+
+/* Media Query para celulares */
+@media (max-width: 768px) {
+
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 250px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*----------------------Contacto------------------*/
+    .contacto {
+        width: 80%;
+    }
+}

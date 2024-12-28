@@ -1,0 +1,561 @@
+:root {
+    --secundary-color: #003366;
+    --primary-color: #253677;
+    --text-color: #FFFFFF;
+    --text-hover-color: #000000;
+    --title-h1: 2.3em;
+    --title-h2: 1.8em;
+    --title-h3: 1.6em;
+    --paragraph: 1.2em;
+}
+
+main {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/*------------------------------------------------*/
+/*--------------------carousel--------------------*/
+/*------------------------------------------------*/
+
+.introduction {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    width: 100vh;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100vh;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir el contenedor, manteniendo la proporción */
+    object-position: center;
+    /* Centra la imagen en el contenedor */
+}
+
+.nombre {
+    width: 100vh;
+    background-color: rgba(97, 77, 77, 0.562);
+    position: absolute;
+}
+
+.nombre h1 {
+    font-size: 4em;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+/*------------------------------------------------*/
+/*--------------------quienes somos---------------*/
+/*------------------------------------------------*/
+
+.quienes-somos {
+    width: 60%;
+    margin: 2em 0;
+    border-top: 1px solid black;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.quienes-somos .titulo{
+    margin: 2em 0;
+    font-size: var(--title-h1);
+    text-align: center;
+    width: 100%;
+}
+
+.quienes-somos p {
+    font-size: var(--title-h3);
+    padding: 1em;
+}
+
+
+/*------------------------------------------------*/
+/*---------------compromiso y proposito-----------*/
+/*------------------------------------------------*/
+
+.compromiso-proposito {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid black;
+    margin: 2em 0;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.compromiso-proposito h1 {
+    font-size: var(--title-h1);
+    margin: 1em;
+    text-align: center;
+}
+
+.compromiso-proposito .titulo {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    font-size: var(--title-h1);
+    margin-bottom: 20px;
+}
+
+.container-tarjetas {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    width: 30%;
+    min-height: 450px;
+    perspective: 1000px;
+}
+
+.tarjeta-inner {
+    width: 100%;
+    min-height: 450px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.tarjeta:hover .tarjeta-inner {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-front,
+.tarjeta-back {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.tarjeta-front {
+    background: linear-gradient(to bottom right, #007bff, #00d4ff);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.tarjeta-front img {
+    width: 20%;
+}
+
+
+.tarjeta-back {
+    background: rgba(255, 255, 255, 0.5);
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-hover-color);
+}
+
+
+.tarjeta-front .titulo-tarjeta h1 {
+    margin: 10px 0;
+    font-size: var(--title-h1);
+    color: var(--text-color);
+}
+
+
+.tarjeta-back .titulo-tarjeta h2 {
+    margin: 10px 0;
+    font-size: var(--title-h2);
+    color: var(--text-hover-color);
+}
+
+.texto-tarjeta ol {
+    margin-left: 20px;
+}
+
+.texto-tarjeta p,
+.texto-tarjeta ol li {
+    text-align: start;
+    font-size: var(--paragraph);
+    color: var(--text-hover-color);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/*------------------------------------------------*/
+/*--------------Ventajas Competitivas-------------*/
+/*------------------------------------------------*/
+
+.ventas-competitivas {
+    width: 60%;
+    margin: 2em 0;
+    border-top: 1px solid black;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.ventas-competitivas h1 {
+    font-size: var(--title-h1);
+    margin: 1em;
+    text-align: center;
+}
+
+.accordion {
+    width: 70%;
+    margin: 20px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    padding: 15px;
+    background: #007bff;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    font-size: var(--title-h2);
+    font-weight: bold;
+    text-align: center;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(to bottom right, #00d4ff, #007bff);
+}
+
+.accordion-content {
+    max-height: 0;
+    background-color: rgba(255, 255, 255, .5);
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.accordion-content.open {
+    height: 1000%;
+}
+
+.nested-accordion {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: #e9e9e9;
+}
+
+.nested-accordion-header {
+    padding: 10px 10px 10px 30px;
+    background: #007bff;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: var(--title-h3);
+    z-index: 20;
+}
+
+.nested-accordion-header:hover {
+    background: linear-gradient(to bottom right, #00d4ff, #007bff);
+}
+
+.nested-accordion-content {
+    max-height: 0;
+    padding: 0 10px;
+    background-color: #f4f4f4;
+    font-size: var(--paragraph);
+    color: #333;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.nested-accordion-content.open {
+    max-height: 650px;
+    overflow: visible;
+}
+
+.nested-accordion-content p {
+    z-index: 10;
+}
+
+/*------------------------------------------------*/
+/*----------------------Eligenos------------------*/
+/*------------------------------------------------*/
+
+.eligenos {
+    width: 60%;
+    margin: 2em 0;
+    border-top: 1px solid black;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.eligenos h1 {
+    font-size: var(--title-h1);
+    margin: 1em;
+    text-align: center;
+}
+
+.parrafo {
+    font-size: var(--title-h3);
+    margin-bottom: 30px;
+    padding: 1em;
+}
+
+.parrafo ul{
+    margin-left: 80px;
+}
+
+
+/*------------------------------------------------*/
+/*------------Media Query para laptops------------*/
+/*------------------------------------------------*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*--------------------quienes-somos---------------*/
+    .quienes-somos {
+        width: 80%;
+        margin: 2em;
+    }
+
+    /*---------------compromiso y proposito-----------*/
+    .compromiso-proposito {
+        width: 80%;
+    }
+
+    .container-tarjetas {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tarjeta {
+        min-height: 550px;
+    }
+
+    .tarjeta-inner {
+        width: 100%;
+        min-height: 550px;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .tarjeta {
+        width: 32%;
+    }
+
+    /*--------------Ventajas Competitivas-------------*/
+    .ventas-competitivas {
+        width: 80%;
+        margin: 2em 0;
+        border-top: 1px solid black;
+    }
+
+    .accordion {
+        width: 100%;
+    }
+
+    /*----------------------Eligenos------------------*/
+    .eligenos {
+        width: 80%;
+    }
+}
+
+
+
+
+/*------------------------------------------------*/
+/*------------Media Query para tablets------------*/
+/*------------------------------------------------*/
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*--------------------quienes-somos---------------*/
+    .quienes-somos {
+        width: 80%;
+    }
+
+    /*---------------compromiso y proposito-----------*/
+    .compromiso-proposito {
+        width: 80%;
+    }
+
+    .container-tarjetas {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .tarjeta {
+        width: 90%;
+        min-height: 300px;
+    }
+
+    .tarjeta-inner {
+        width: 100%;
+        min-height: 300px;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .tarjeta-front img {
+        width: 10%;
+    }
+
+    /*--------------Ventajas Competitivas-------------*/
+    .ventas-competitivas {
+        width: 80%;
+        margin: 2em 0;
+        border-top: 1px solid black;
+    }
+
+    .accordion {
+        width: 100%;
+    }
+
+    /*----------------------Eligenos------------------*/
+    .eligenos {
+        width: 80%;
+    }
+
+    .parrafo ul{
+        margin-left: 40px;
+    }
+}
+
+/* Media Query para celulares */
+@media (max-width: 768px) {
+
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 250px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*--------------------quienes-somos---------------*/
+    .quienes-somos {
+        width: 80%;
+    }
+
+    /*---------------compromiso y proposito-----------*/
+    .compromiso-proposito {
+        width: 80%;
+    }
+
+    .container-tarjetas {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .tarjeta {
+        width: 100%;
+        min-height: 450px;
+    }
+
+    .tarjeta-inner {
+        min-height: 450px;
+    }
+
+    .tarjeta-front img {
+        width: 10%;
+    }
+
+    /*--------------Ventajas Competitivas-------------*/
+    .ventas-competitivas {
+        width: 80%;
+        margin: 2em 0;
+        border-top: 1px solid black;
+    }
+
+    .accordion {
+        width: 100%;
+    }
+
+    /*----------------------Eligenos------------------*/
+    .eligenos {
+        width: 80%;
+    }
+
+    .parrafo ul{
+        margin-left: 30px;
+    }
+}

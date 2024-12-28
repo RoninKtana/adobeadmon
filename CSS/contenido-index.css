@@ -1,0 +1,410 @@
+:root {
+    --secundary-color: #003366;
+    --primary-color: #253677;
+    --text-color: #FFFFFF;
+    --text-hover-color: #000000;
+    --title-h1: 1.8em;
+    --title-h2: 1.6em;
+    --title-h3: 1.4em;
+    --paragraph: 1.2em;
+}
+
+main {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.75);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/*------------------------------------------------*/
+/*--------------------carousel--------------------*/
+/*------------------------------------------------*/
+
+.introduction {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel {
+    width: 100vh;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: flex;
+    width: max-content;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100vh;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.nombre {
+    width: 100vh;
+    background-color: rgba(97, 77, 77, 0.562);
+    position: absolute;
+}
+
+.nombre h1 {
+    font-size: 4em;
+    text-align: center;
+    color: var(--text-color);
+}
+
+
+/*------------------------------------------------*/
+/*--------------------eslogan---------------------*/
+/*------------------------------------------------*/
+
+.eslogan {
+    width: 60%;
+    margin: 2em 0;
+    border-top: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.eslogan h1 {
+    font-size: var(--title-h1);
+    padding: 1.3em;
+    text-align: center;
+    width: 100%;
+}
+
+
+/*------------------------------------------------*/
+/*--------------------servicios-------------------*/
+/*------------------------------------------------*/
+
+.servicios {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid black;
+    margin: 2em 0;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.titulo {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+    font-size: var(--title-h1);
+    margin-bottom: 20px;
+}
+
+.container-tarjetas {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.tarjeta {
+    width: 100%;
+    height: 100%;
+    background-color: #E6F0FA;
+    border-radius: 20px;
+    border: 1px solid #B0D4F1;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    background-color: #CDE4F9;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+.tarjeta a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    color: var(--text-hover-color);
+}
+
+.tarjeta .titulo-tarjeta {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: var(--title-h3);
+    margin: 10px;
+}
+
+.tarjeta img {
+    width: 60%;
+    height: 150px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.texto-tarjeta {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.texto-tarjeta p {
+    font-size: var(--paragraph);
+}
+
+.texto-tarjeta p b {
+    color: red;
+}
+
+.tarjeta button {
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: var(--paragraph);
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.tarjeta button:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+    cursor: pointer3;
+}
+
+.button-advanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-advanced:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta button img {
+    box-shadow: none;
+    height: var(--paragraph);
+}
+
+
+
+
+
+/*------------------------------------------------*/
+/*------------Media Query para laptops------------*/
+/*------------------------------------------------*/
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /*------------------------------------------------*/
+    /*--------------------carousel--------------------*/
+    /*------------------------------------------------*/
+
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+
+    /*------------------------------------------------*/
+    /*--------------------eslogan---------------------*/
+    /*------------------------------------------------*/
+    .eslogan {
+        width: 80%;
+        margin: 2em;
+    }
+
+
+    /*------------------------------------------------*/
+    /*--------------------servicios-------------------*/
+    /*------------------------------------------------*/
+
+    .servicios {
+        width: 80%;
+    }
+}
+
+
+
+
+/*------------------------------------------------*/
+/*------------Media Query para tablets------------*/
+/*------------------------------------------------*/
+@media (min-width: 769px) and (max-width: 1024px) {
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*--------------------eslogan---------------------*/
+    .eslogan {
+        width: 80%;
+    }
+
+    /*--------------------servicios-------------------*/
+    .servicios {
+        width: 80%;
+    }
+
+    .container-tarjetas {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .tarjeta {
+        height: auto;
+    }
+
+    .tarjeta a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjeta .titulo-tarjeta {
+        width: 100%;
+        text-align: center;
+        font-size: var(--title-h3);
+        padding: 1em;
+        margin-bottom: 10px;
+    }
+
+    .tarjeta .img-texto-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .tarjeta .img-texto-container img {
+        height: 50%;
+        width: 40%;
+    }
+
+    .tarjeta .img-texto-container .texto-tarjeta {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: start;
+        padding: 1em;
+    }
+
+    .tarjeta .img-texto-container .texto-tarjeta p {
+        font-size: var(--paragraph);
+        width: 100%;
+    }
+}
+
+/* Media Query para celulares */
+@media (max-width: 767px) {
+    /*--------------------carousel--------------------*/
+    .introduction {
+        width: 80%;
+    }
+
+    .carousel {
+        height: 250px;
+    }
+
+    .carousel-slide img {
+        height: 60%;
+    }
+
+    /*--------------------eslogan---------------------*/
+    .eslogan {
+        width: 80%;
+    }
+
+    /*--------------------servicios-------------------*/
+    .servicios {
+        width: 90%;
+    }
+
+    .container-tarjetas {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .tarjeta {
+        height: auto;
+    }
+
+    .tarjeta a {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tarjeta .titulo-tarjeta {
+        width: 100%;
+        text-align: center;
+        font-size: var(--title-h3);
+        padding: 1em;
+        margin-bottom: 10px;
+    }
+
+    .tarjeta .img-texto-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .tarjeta .img-texto-container img {
+        width: 70%;
+    }
+
+    .tarjeta .img-texto-container .texto-tarjeta {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1em;
+    }
+
+    .tarjeta .img-texto-container .texto-tarjeta p {
+        font-size: var(--paragraph);
+        width: 100%;
+    }
+}
