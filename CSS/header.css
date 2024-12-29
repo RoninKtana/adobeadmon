@@ -35,6 +35,8 @@ header{
     top: 0;
     left: 0;
     z-index: 1000;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+    max-width: 100vw; /* Limita el ancho máximo al tamaño de la ventana */
 }
 
 /* Estilos para el header */
