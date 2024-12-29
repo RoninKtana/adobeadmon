@@ -28,7 +28,6 @@ body {
 }
 
 header{
-    background-color: var(--primary-color);
     background-color: red;
     height: 100px;
     width: 100%;
