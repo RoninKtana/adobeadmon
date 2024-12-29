@@ -18,10 +18,7 @@ main {
     margin-top: 100px;
 }
 
-/*------------------------------------------------*/
 /*--------------------carousel--------------------*/
-/*------------------------------------------------*/
-
 .introduction {
     width: 60%;
     display: flex;
@@ -71,11 +68,7 @@ main {
 }
 
 
-/*------------------------------------------------*/
 /*-------------politicas de Privacidad------------*/
-/*------------------------------------------------*/
-
-
 .contenido-principal {
     width: 60%;
     padding: 30px;
@@ -156,6 +149,12 @@ input[type="submit"]:hover {
 /*------------Media Query para laptops------------*/
 /*------------------------------------------------*/
 @media (min-width: 1025px) and (max-width: 1440px) {
+    :root {
+        --title-h1: 1.8rem;
+        --title-h2: 1.6rem;
+        --title-h3: 1.4rem;
+        --paragraph: 1.2rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
@@ -183,10 +182,16 @@ input[type="submit"]:hover {
 /*------------Media Query para tablets------------*/
 /*------------------------------------------------*/
 @media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --title-h1: 1.6rem;
+        --title-h2: 1.4rem;
+        --title-h3: 1.2rem;
+        --paragraph: 1rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
-        width: 80%;
+        width: 90%;
     }
 
     .carousel {
@@ -199,19 +204,26 @@ input[type="submit"]:hover {
 
     /*--------------oliticas de Privacidad------------*/
     .contenido-principal {
-        width: 80%;
+        width: 90%;
     }
 }
 
 /* Media Query para celulares */
 @media (max-width: 768px) {
+    :root {
+        --title-h1: 1.4rem;
+        --title-h2: 1.2rem;
+        --title-h3: 1rem;
+        --paragraph: 0.9rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
-        width: 80%;
+        max-width: 100%;
     }
 
     .carousel {
+        width: 100vw;
         height: 250px;
     }
 
@@ -219,8 +231,13 @@ input[type="submit"]:hover {
         height: 60%;
     }
 
-    /*--------------oliticas de Privacidad------------*/
+    .introduction .nombre{
+        width: 100%;
+    }
+
+    /*-------------politicas de Privacidad------------*/
     .contenido-principal {
-        width: 80%;
+        width: 100%;
+        padding: 10px;
     }
 }

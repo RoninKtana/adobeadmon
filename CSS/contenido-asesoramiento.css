@@ -3,10 +3,10 @@
     --primary-color: #253677;
     --text-color: #FFFFFF;
     --text-hover-color: #000000;
-    --title-h1: 1.8rem;
-    --title-h2: 1.6rem;
-    --title-h3: 1.4rem;
-    --paragraph: 1.2rem;
+    --title-h1: 2rem;
+    --title-h2: 1.8rem;
+    --title-h3: 1.6rem;
+    --paragraph: 1.4rem;
 }
 
 main {
@@ -17,6 +17,7 @@ main {
     align-items: center;
     margin-top: 100px;
 }
+
 
 /*--------------------carousel--------------------*/
 .introduction {
@@ -65,90 +66,110 @@ main {
     color: var(--text-color);
 }
 
-/*----------------------Contacto------------------*/
 
-.contacto {
+/*--------------asesoramiento--------------------*/
+
+
+.asesoramiento {
+    padding: 40px 20px;
     width: 60%;
-    margin: 2em 0;
-    border-top: 1px solid black;
-    display: flex;
-    justify-content: center;
+    margin: 2rem auto;
     background-color: rgba(255, 255, 255, 0.3);
+    border-top: 1px solid black;
 }
 
-.form-container {
-    margin: 2em 0;
-    background: linear-gradient(135deg, #003E7C, #0073CF, #9ACFFF);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-width: 450px;
-    width: 100%;
-    color: #ffffff;
-    animation: gradient 15s ease infinite;
+.cabecera {
+    color: var(--text-hover-color);
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #3498db93;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+.cabecera h1{
+    font-size: var(--title-h1);
+    margin: 0;
 }
 
-.form-container h1 {
+h2 {
+    margin-top: 1rem;
+    font-size: var(--title-h2);
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: var(--paragraph);
+    color: var(--text-hover-color);
+    line-height: 1.6;
     margin-bottom: 20px;
+}
+
+h3{
+    font-size: var(--title-h3);
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.form-container input,
-.form-container textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    font-size: 14px;
-    color: #333;
-}
-
-.form-container input:focus,
-.form-container textarea:focus {
-    outline: none;
-    border-color: #ffffff;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-}
-
-.form-container button {
-    width: 100%;
-    padding: 12px;
-    background: #ffffff;
-    color: #0073CF;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
+/* Acordeón */
+.accordion {
+    background-color: #3498db;
+    color: white;
     cursor: pointer;
-    transition: background 0.3s, color 0.3s;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: var(--paragraph);
+    transition: 0.4s;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
-.form-container button:hover {
-    background: #0056b3;
-    color: #ffffff;
+.accordion:hover {
+    background-color: #2980b9;
 }
 
-.form-container p {
+.accordion .icon {
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+
+.active,
+.accordion:focus {
+    background-color: #2980b9;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    color: #7f8c8d;
+    font-size: 1rem;
+    line-height: 1.6;
+    border-left: 3px solid #2980b9;
+    margin-bottom: 10px;
+}
+
+.cta-button {
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.1rem;
+    padding: 15px 25px;
     text-align: center;
-    font-size: 14px;
-    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 30px;
+    transition: background-color 0.3s;
 }
 
+.cta-button:hover {
+    background-color: #c0392b;
+}
 
 /*------------------------------------------------*/
 /*------------Media Query para laptops------------*/
@@ -172,11 +193,6 @@ main {
 
     .carousel-slide img {
         height: 60%;
-    }
-
-    /*----------------------Contacto------------------*/
-    .contacto {
-        width: 80%;
     }
 }
 
@@ -206,11 +222,6 @@ main {
     .carousel-slide img {
         height: 60%;
     }
-
-    /*----------------------Contacto------------------*/
-    .contacto {
-        width: 90%;
-    }
 }
 
 /* Media Query para celulares */
@@ -236,13 +247,7 @@ main {
         height: 60%;
     }
 
-    .introduction .nombre{
+    .introduction .nombre {
         width: 100%;
-    }
-
-    /*----------------------Contacto------------------*/
-    .contacto {
-        width: 100%;
-        padding: 10px;
     }
 }

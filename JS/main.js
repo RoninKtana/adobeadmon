@@ -32,35 +32,67 @@ document.querySelectorAll(".submenu-parent > a").forEach((item) => {
 
 
 
-const carouselSlide = document.querySelector('.carousel-slide');
-    const images = document.querySelectorAll('.carousel-slide img');
-    const totalImages = images.length;
-    let currentIndex = 0;
-    let imageWidth = images[0].clientWidth; // Obtenemos el ancho de la primera imagen
 
-    // Función para mover el carrusel
-    function slideCarousel() {
-        currentIndex++;
 
-        if (currentIndex === totalImages) {
-            // Cuando llegamos a la última imagen, reiniciamos el carrusel
-            carouselSlide.style.transition = 'none'; // Sin transición para reiniciar
-            currentIndex = 0; // Volver al primer índice
-            carouselSlide.style.transform = `translateX(0)`; // Regresamos al inicio
-            setTimeout(() => {
-                carouselSlide.style.transition = 'transform 0.5s ease-in-out'; // Restauramos la transición
-            }, 50); // Pequeño retraso para evitar el salto visible
-        } else {
-            // Desplazamos el carrusel a la siguiente imagen
-            const offset = -currentIndex * imageWidth;
-            carouselSlide.style.transform = `translateX(${offset}px)`;
-        }
+/*------------------------------------------*/
+/*----------------carousel------------------*/
+/*------------------------------------------*/
+const carouselSlide = document.querySelector(".carousel-slide");
+const images = document.querySelectorAll(".carousel-slide img");
+const totalImages = images.length;
+let currentIndex = 0;
+let imageWidth = images[0].clientWidth; // Obtenemos el ancho de la primera imagen
+
+// Función para mover el carrusel
+function slideCarousel() {
+  currentIndex++;
+
+  if (currentIndex === totalImages) {
+    // Cuando llegamos a la última imagen, reiniciamos el carrusel
+    carouselSlide.style.transition = "none"; // Sin transición para reiniciar
+    currentIndex = 0; // Volver al primer índice
+    carouselSlide.style.transform = `translateX(0)`; // Regresamos al inicio
+    setTimeout(() => {
+      carouselSlide.style.transition = "transform 0.5s ease-in-out"; // Restauramos la transición
+    }, 50); // Pequeño retraso para evitar el salto visible
+  } else {
+    // Desplazamos el carrusel a la siguiente imagen
+    const offset = -currentIndex * imageWidth;
+    carouselSlide.style.transform = `translateX(${offset}px)`;
+  }
+}
+
+// Iniciar el carrusel
+setInterval(slideCarousel, 5000); // Cambiar cada 5 segundos
+
+// Actualizar el ancho de la imagen al cambiar el tamaño de la ventana
+window.addEventListener("resize", () => {
+  imageWidth = images[0].clientWidth; // Actualiza el ancho de la imagen
+});
+/*------------------------------------------*/
+/*----------------carousel------------------*/
+/*------------------------------------------*/
+
+
+
+
+
+
+/*------------------------------------------*/
+/*----------------acordeon------------------*/
+/*------------------------------------------*/
+var acc = document.getElementsByClassName("accordion");
+for (var i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
     }
-
-    // Iniciar el carrusel
-    setInterval(slideCarousel, 5000); // Cambiar cada 5 segundos
-
-    // Actualizar el ancho de la imagen al cambiar el tamaño de la ventana
-    window.addEventListener('resize', () => {
-        imageWidth = images[0].clientWidth; // Actualiza el ancho de la imagen
-    });
+  });
+}
+/*------------------------------------------*/
+/*----------------acordeon------------------*/
+/*------------------------------------------*/

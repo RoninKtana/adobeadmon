@@ -3,10 +3,10 @@
     --primary-color: #253677;
     --text-color: #FFFFFF;
     --text-hover-color: #000000;
-    --title-h1: 2.3em;
-    --title-h2: 1.8em;
-    --title-h3: 1.6em;
-    --paragraph: 1.2em;
+    --title-h1: 2rem;   /* Tamaño más grande */
+    --title-h2: 1.8rem;
+    --title-h3: 1.6rem;
+    --paragraph: 1.4rem;
 }
 
 main {
@@ -18,10 +18,7 @@ main {
     margin-top: 100px;
 }
 
-/*------------------------------------------------*/
 /*--------------------carousel--------------------*/
-/*------------------------------------------------*/
-
 .introduction {
     width: 60%;
     display: flex;
@@ -53,9 +50,7 @@ main {
     width: 100vh;
     height: 100%;
     object-fit: cover;
-    /* Ajusta la imagen para cubrir el contenedor, manteniendo la proporción */
     object-position: center;
-    /* Centra la imagen en el contenedor */
 }
 
 .nombre {
@@ -65,25 +60,23 @@ main {
 }
 
 .nombre h1 {
-    font-size: 4em;
+    font-size: calc(var(--title-h1) * 2.5);
     text-align: center;
     color: var(--text-color);
 }
 
 
-/*------------------------------------------------*/
 /*--------------------quienes somos---------------*/
-/*------------------------------------------------*/
 
 .quienes-somos {
     width: 60%;
-    margin: 2em 0;
+    margin: 2rem 0;
     border-top: 1px solid black;
     background: rgba(255, 255, 255, 0.3);
 }
 
 .quienes-somos .titulo{
-    margin: 2em 0;
+    margin: 2rem 0;
     font-size: var(--title-h1);
     text-align: center;
     width: 100%;
@@ -91,7 +84,7 @@ main {
 
 .quienes-somos p {
     font-size: var(--title-h3);
-    padding: 1em;
+    padding: 1rem;
 }
 
 
@@ -104,18 +97,18 @@ main {
     display: flex;
     flex-direction: column;
     border-top: 1px solid black;
-    margin: 2em 0;
+    margin: 2rem 0;
     background: rgba(255, 255, 255, 0.3);
 }
 
 .compromiso-proposito h1 {
     font-size: var(--title-h1);
-    margin: 1em;
+    margin: 1rem;
     text-align: center;
 }
 
 .compromiso-proposito .titulo {
-    padding: 1em;
+    padding: 1rem;
     width: 100%;
     text-align: center;
     font-size: var(--title-h1);
@@ -225,14 +218,14 @@ main {
 
 .ventas-competitivas {
     width: 60%;
-    margin: 2em 0;
+    margin: 2rem 0;
     border-top: 1px solid black;
     background-color: rgba(255, 255, 255, .3);
 }
 
 .ventas-competitivas h1 {
     font-size: var(--title-h1);
-    margin: 1em;
+    margin: 1rem;
     text-align: center;
 }
 
@@ -325,21 +318,21 @@ main {
 
 .eligenos {
     width: 60%;
-    margin: 2em 0;
+    margin: 2rem 0;
     border-top: 1px solid black;
     background-color: rgba(255, 255, 255, .3);
 }
 
 .eligenos h1 {
     font-size: var(--title-h1);
-    margin: 1em;
+    margin: 1rem;
     text-align: center;
 }
 
 .parrafo {
     font-size: var(--title-h3);
     margin-bottom: 30px;
-    padding: 1em;
+    padding: 1rem;
 }
 
 .parrafo ul{
@@ -351,6 +344,12 @@ main {
 /*------------Media Query para laptops------------*/
 /*------------------------------------------------*/
 @media (min-width: 1025px) and (max-width: 1440px) {
+    :root {
+        --title-h1: 1.8rem;
+        --title-h2: 1.6rem;
+        --title-h3: 1.4rem;
+        --paragraph: 1.2rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
@@ -368,7 +367,7 @@ main {
     /*--------------------quienes-somos---------------*/
     .quienes-somos {
         width: 80%;
-        margin: 2em;
+        margin: 2rem;
     }
 
     /*---------------compromiso y proposito-----------*/
@@ -403,7 +402,7 @@ main {
     /*--------------Ventajas Competitivas-------------*/
     .ventas-competitivas {
         width: 80%;
-        margin: 2em 0;
+        margin: 2rem 0;
         border-top: 1px solid black;
     }
 
@@ -424,10 +423,16 @@ main {
 /*------------Media Query para tablets------------*/
 /*------------------------------------------------*/
 @media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --title-h1: 1.6rem;
+        --title-h2: 1.4rem;
+        --title-h3: 1.2rem;
+        --paragraph: 1rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
-        width: 80%;
+        width: 90%;
     }
 
     .carousel {
@@ -440,12 +445,12 @@ main {
 
     /*--------------------quienes-somos---------------*/
     .quienes-somos {
-        width: 80%;
+        width: 90%;
     }
 
     /*---------------compromiso y proposito-----------*/
     .compromiso-proposito {
-        width: 80%;
+        width: 90%;
     }
 
     .container-tarjetas {
@@ -474,8 +479,8 @@ main {
 
     /*--------------Ventajas Competitivas-------------*/
     .ventas-competitivas {
-        width: 80%;
-        margin: 2em 0;
+        width: 90%;
+        margin: 2rem 0;
         border-top: 1px solid black;
     }
 
@@ -495,13 +500,20 @@ main {
 
 /* Media Query para celulares */
 @media (max-width: 768px) {
+    :root {
+        --title-h1: 1.4rem;
+        --title-h2: 1.2rem;
+        --title-h3: 1rem;
+        --paragraph: 0.9rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
-        width: 80%;
+        max-width: 100%;
     }
 
     .carousel {
+        width: 100vw;
         height: 250px;
     }
 
@@ -509,14 +521,20 @@ main {
         height: 60%;
     }
 
+    .introduction .nombre{
+        width: 100%;
+    }
+
     /*--------------------quienes-somos---------------*/
     .quienes-somos {
-        width: 80%;
+        width: 100%;
+        padding: 10px;
     }
 
     /*---------------compromiso y proposito-----------*/
     .compromiso-proposito {
-        width: 80%;
+        width: 100%;
+        padding: 10px;
     }
 
     .container-tarjetas {
@@ -541,8 +559,9 @@ main {
 
     /*--------------Ventajas Competitivas-------------*/
     .ventas-competitivas {
-        width: 80%;
-        margin: 2em 0;
+        width: 100%;
+        padding: 10px;
+        margin: 2rem 0;
         border-top: 1px solid black;
     }
 
@@ -552,7 +571,8 @@ main {
 
     /*----------------------Eligenos------------------*/
     .eligenos {
-        width: 80%;
+        width: 100%;
+        padding: 10px;
     }
 
     .parrafo ul{

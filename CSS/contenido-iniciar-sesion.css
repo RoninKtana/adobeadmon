@@ -3,10 +3,10 @@
     --primary-color: #253677;
     --text-color: #FFFFFF;
     --text-hover-color: #000000;
-    --title-h1: 1.8em;
-    --title-h2: 1.6em;
-    --title-h3: 1.4em;
-    --paragraph: 1.2em;
+    --title-h1: 2rem;   
+    --title-h2: 1.8rem;
+    --title-h3: 1.6rem;
+    --paragraph: 1.4rem;
 }
 
 main {
@@ -18,10 +18,8 @@ main {
     margin-top: 100px;
 }
 
-/*------------------------------------------------*/
-/*--------------------carousel--------------------*/
-/*------------------------------------------------*/
 
+/*--------------------carousel--------------------*/
 .introduction {
     width: 60%;
     display: flex;
@@ -53,9 +51,7 @@ main {
     width: 100vh;
     height: 100%;
     object-fit: cover;
-    /* Ajusta la imagen para cubrir el contenedor, manteniendo la proporción */
     object-position: center;
-    /* Centra la imagen en el contenedor */
 }
 
 .nombre {
@@ -65,20 +61,17 @@ main {
 }
 
 .nombre h1 {
-    font-size: 4em;
+    font-size: calc(var(--title-h1) * 2.5);
     text-align: center;
     color: var(--text-color);
 }
 
 
-/*------------------------------------------------*/
 /*--------------iniciar sesion--------------------*/
-/*------------------------------------------------*/
-
 .iniciar-sesion {
     width: 60%;
     padding: 30px;
-    margin: 2em;
+    margin: 2rem;
     display: flex;
     justify-content: center;
     border-top: 1px solid black;
@@ -154,6 +147,12 @@ main {
 /*------------Media Query para laptops------------*/
 /*------------------------------------------------*/
 @media (min-width: 1025px) and (max-width: 1440px) {
+    :root {
+        --title-h1: 1.8rem;
+        --title-h2: 1.6rem;
+        --title-h3: 1.4rem;
+        --paragraph: 1.2rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
@@ -167,12 +166,7 @@ main {
     .carousel-slide img {
         height: 60%;
     }
-
-    /*--------------oliticas de Privacidad------------*/
-    .contenido-principal {
-        width: 80%;
-    }
-
+    
     /*--------------iniciar sesion--------------------*/
     .iniciar-sesion {
         width: 80%;
@@ -186,10 +180,16 @@ main {
 /*------------Media Query para tablets------------*/
 /*------------------------------------------------*/
 @media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --title-h1: 1.6rem;
+        --title-h2: 1.4rem;
+        --title-h3: 1.2rem;
+        --paragraph: 1rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
-        width: 80%;
+        width: 90%;
     }
 
     .carousel {
@@ -200,26 +200,28 @@ main {
         height: 60%;
     }
 
-    /*--------------oliticas de Privacidad------------*/
-    .contenido-principal {
-        width: 80%;
-    }
-
     /*--------------iniciar sesion--------------------*/
     .iniciar-sesion {
-        width: 80%;
+        width: 90%;
     }
 }
 
 /* Media Query para celulares */
 @media (max-width: 768px) {
+    :root {
+        --title-h1: 1.4rem;
+        --title-h2: 1.2rem;
+        --title-h3: 1rem;
+        --paragraph: 0.9rem;
+    }
 
     /*--------------------carousel--------------------*/
     .introduction {
-        width: 80%;
+        max-width: 100%;
     }
 
     .carousel {
+        width: 100vw;
         height: 250px;
     }
 
@@ -227,14 +229,13 @@ main {
         height: 60%;
     }
 
-    /*--------------oliticas de Privacidad------------*/
-    .contenido-principal {
-        width: 80%;
+    .introduction .nombre{
+        width: 100%;
     }
 
     /*--------------iniciar sesion--------------------*/
     .iniciar-sesion {
-        width: 80%;
+        width: 100%;
     }
 
     .login-container {
