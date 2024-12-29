@@ -23,6 +23,8 @@ body {
     height: 100vh;
     margin: 0;
     background-attachment: fixed; /* Esta propiedad hace que la imagen de fondo sea fija */
+    overflow-x: hidden; /* Desactiva scroll horizontal */
+    max-width: 100vw;  /* Limita el ancho del cuerpo */
 }
 
 header{
@@ -46,6 +48,8 @@ header{
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Logo dentro del header */
