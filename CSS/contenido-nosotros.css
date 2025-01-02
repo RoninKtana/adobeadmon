@@ -60,7 +60,7 @@ main {
 }
 
 .nombre h1 {
-    font-size: calc(var(--title-h1) * 2.5);
+    font-size: calc(var(--title-h1) * 2);
     text-align: center;
     color: var(--text-color);
 }
@@ -520,7 +520,7 @@ main {
     }
 
     .carousel {
-        width: 97vw;
+        width: 100vw;
         height: 250px;
     }
 
@@ -529,7 +529,11 @@ main {
     }
 
     .introduction .nombre{
-        width: 100%;
+        width: 100vw;
+    }
+
+    .nombre h1 {
+        font-size: calc(var(--title-h1) * 2);
     }
 
     /*--------------------quienes-somos---------------*/
@@ -590,7 +594,7 @@ main {
     }
     
     .eligenos .image img{
-        width: 95vw;
+        width: 100vw;
     }
     .tam1{
         display: none;

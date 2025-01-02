@@ -61,15 +61,15 @@ main {
 }
 
 .nombre h1 {
-    font-size: calc(var(--title-h1) * 2);
+    font-size: calc(var(--title-h1) * 2.5);
     text-align: center;
     color: var(--text-color);
 }
 
 
 
-/*--------------asesoramiento--------------------*/
-.asesoramiento {
+/*--------------administracion--------------------*/
+.administracion {
     padding: 40px 20px;
     width: 60%;
     margin: 2rem auto;
@@ -90,20 +90,20 @@ main {
     margin: 0;
 }
 
-.asesoramiento h2 {
+.administracion h2 {
     margin-top: 1rem;
     font-size: var(--title-h2);
     margin-bottom: 20px;
 }
 
-.asesoramiento p {
+.administracion p {
     font-size: var(--paragraph);
     color: var(--text-hover-color);
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.asesoramiento .centro {
+.administracion .centro {
     font-size: var(--title-h2);
     text-align: center;
     margin-bottom: 20px;
@@ -192,8 +192,8 @@ main {
         height: 60%;
     }
 
-    /*--------------asesoramiento--------------------*/
-    .asesoramiento {
+    /*--------------administr.administracion--------------------*/
+    .administracion {
         width: 80%;
     }
 }
@@ -225,8 +225,8 @@ main {
         height: 60%;
     }
 
-    /*--------------asesoramiento--------------------*/
-    .asesoramiento {
+    /*--------------administr.administracion--------------------*/
+    .administracion {
         width: 90%;
     }
 }
@@ -254,16 +254,12 @@ main {
         height: 60%;
     }
 
-    .introduction .nombre {
-        width: 100vw;
+    .introduction .nombre{
+        width: 100%;
     }
 
-    .nombre h1 {
-        font-size: calc(var(--title-h1) * 2);
-    }
-
-    /*--------------asesoramiento--------------------*/
-    .asesoramiento {
+    /*--------------administr.administracion--------------------*/
+    .administracion {
         width: 100%;
     }
 

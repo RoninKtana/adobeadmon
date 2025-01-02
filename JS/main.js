@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicializar todas las funcionalidades
-  initHeader();
+  // Carga dinámica de header y footer
+  loadHTML("headers", "header.html", initHeader);
+  loadHTML("footers", "footer.html");
   initCarousel();
   initAccordion();
 });
@@ -9,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
  * Carga contenido HTML de forma dinámica en un elemento con un ID dado.
  * @param {string} id - ID del elemento donde se insertará el contenido.
  * @param {string} url - URL del archivo HTML a cargar.
+ * @param {Function} [callback] - Función a ejecutar después de cargar el contenido.
  */
-async function loadHTML(id, url) {
+async function loadHTML(id, url, callback) {
   try {
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Error al cargar ${url}: ${response.status}`);
@@ -18,6 +20,7 @@ async function loadHTML(id, url) {
     const targetElement = document.getElementById(id);
     if (targetElement) {
       targetElement.innerHTML = html;
+      if (callback) callback(); // Llama la función de inicialización si está definida
     } else {
       console.warn(`Elemento con ID ${id} no encontrado.`);
     }
@@ -26,40 +29,40 @@ async function loadHTML(id, url) {
   }
 }
 
-// Carga los elementos dinámicos
-loadHTML("headers", "header.html");
-loadHTML("footers", "footer.html");
-
 /**
- * Inicializa la funcionalidad del header.
+ * Inicializa las funcionalidades del header.
  */
 function initHeader() {
   const abrirBtn = document.getElementById("abrir");
   const navegation = document.getElementById("navegation");
 
   if (abrirBtn && navegation) {
+    // Evento para el botón de abrir/cerrar menú
     abrirBtn.addEventListener("click", () => {
       navegation.classList.toggle("open");
+      console.log("Menú principal abierto:", navegation.classList.contains("open"));
     });
 
+    // Evento para desplegar submenús
     document.querySelectorAll(".submenu-parent > a").forEach((item) => {
       item.addEventListener("click", (event) => {
-        event.preventDefault();
-        const submenu = item.nextElementSibling;
+        event.preventDefault(); // Evita el comportamiento por defecto del enlace
         const parent = item.parentElement;
-
+        const submenu = parent.querySelector(".submenu");
         if (submenu) {
           const isVisible = submenu.style.display === "block";
           submenu.style.display = isVisible ? "none" : "block";
           parent.classList.toggle("open", !isVisible);
-          parent.classList.toggle("activate", !isVisible);
+          console.log(`Submenú ${isVisible ? "cerrado" : "abierto"} para:`, item.textContent);
         }
       });
     });
   } else {
-    console.warn("Elementos del header no encontrados.");
+    console.warn("Elementos no encontrados en el header.");
   }
 }
+
+
 
 /**
  * Inicializa el carrusel.

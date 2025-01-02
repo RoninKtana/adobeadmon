@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón con Subacordeón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* Acordeón principal */
+        .accordion {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 1.1rem;
+            transition: 0.4s;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .accordion:hover {
+            background-color: #2980b9;
+        }
+
+        .accordion .icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .active, .accordion:focus {
+            background-color: #2980b9;
+        }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            color: #7f8c8d;
+            font-size: 1rem;
+            line-height: 1.6;
+            border-left: 3px solid #2980b9;
+            margin-bottom: 10px;
+        }
+
+        /* Subacordeón */
+        .nested-accordion {
+            background-color: #5dade2;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.4s;
+            display: block;
+        }
+
+        .nested-accordion:hover {
+            background-color: #3498db;
+        }
+
+        .nested-panel {
+            padding: 10px 15px;
+            display: none;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-top: 5px;
+            border-left: 3px solid #5dade2;
+        }
+
+    </style>
+</head>
+
+<body>
+    <section class="ventas-competitivas">
+        <h2>¿Por Qué Destacamos?</h2>
+
+        <!-- Acordeón principal -->
+        <button class="accordion"><span class="icon">📂</span>Integridad</button>
+        <div class="panel">
+            <!-- Subacordeón -->
+            <button class="nested-accordion">Reportes Mensuales Transparentes</button>
+            <div class="nested-panel">
+                <p>Proporcionamos informes detallados y
+                    claros sobre el estado financiero,
+                    administrativo y operativo del
+                    condominio. Estos reportes incluyen
+                    ingresos, egresos, estado de cuentas,
+                    avances en proyectos y cualquier
+                    información relevante para los
+                    residentes y el comité de
+                    administración.</p>
+            </div>
+
+            <button class="nested-accordion">Múltiples Cotizaciones para Decisiones Informadas</button>
+            <div class="nested-panel">
+                <p>Presentamos varias opciones de
+                    proveedores y servicios con sus
+                    respectivas cotizaciones, asegurando que
+                    cada decisión sea tomada con la mayor
+                    transparencia y con base en costos,
+                    calidad y conveniencia. Esto refuerza la
+                    confianza en el manejo de recursos y
+                    garantiza la optimización del
+                    presupuesto.</p>
+            </div>
+        </div>
+
+        <!-- Acordeón principal -->
+        <button class="accordion"><span class="icon">📊</span>Servicios</button>
+        <div class="panel">
+            <!-- Subacordeón -->
+            <button class="nested-accordion">Boletín Informativo</button>
+            <div class="nested-panel">
+                <p>Mantenemos a los residentes informados
+                    sobre actividades, eventos, estados
+                    financieros y cualquier asunto relevante
+                    del condominio. Nuestro boletín es
+                    claro, periódico y fácil de entender,
+                    fomentando una comunicación abierta y
+                    transparente.</p>
+            </div>
+
+            <button class="nested-accordion">Gestión de Incidencias</button>
+            <div class="nested-panel">
+                <p>Contamos con un sistema eficiente para
+                    registrar, dar seguimiento y resolver
+                    cualquier incidencia o problema
+                    reportado por los residentes.
+                    Priorizamos la atención oportuna para
+                    garantizar la tranquilidad de la
+                    comunidad.</p>
+            </div>
+
+            <button class="nested-accordion">Trato Personalizado</button>
+            <div class="nested-panel">
+                <p>Ofrecemos soluciones a medida, adaptadas
+                    a las necesidades específicas de cada
+                    condominio. Entendemos que cada
+                    comunidad es única, y nuestro objetivo
+                    es brindar un servicio cercano y
+                    profesional.</p>
+            </div>
+
+            <button class="nested-accordion">Mantenimiento Preventivo</button>
+            <div class="nested-panel">
+                <p>Diseñamos programas de mantenimiento
+                    preventivo para garantizar que las
+                    instalaciones del condominio estén
+                    siempre en óptimas condiciones. Esto
+                    incluye acciones regulares que evitan
+                    problemas mayores y prolongan la vida
+                    útil de las áreas comunes.</p>
+            </div>
+
+            <button class="nested-accordion">Comunicación Constante</button>
+            <div class="nested-panel">
+                <p>Establecemos canales de comunicación
+                    efectivos para mantener un contacto
+                    directo con los residentes y el comité
+                    de administración. Nuestra prioridad es
+                    escuchar, informar y resolver cualquier
+                    inquietud de manera rápida y
+                    eficiente.</p>
+            </div>
+        </div>
+
+        <!-- Acordeón principal -->
+        <button class="accordion"><span class="icon">📈</span>Innovación</button>
+        <div class="panel">
+            <!-- Subacordeón -->
+            <button class="nested-accordion">Sistema Integral de Gestión</button>
+            <div class="nested-panel">
+                <p>Contamos con un sistema tecnológico
+                    avanzado que centraliza todas las
+                    operaciones del condominio. Este sistema
+                    permite la gestión de pagos, control de
+                    morosidad, reportes financieros,
+                    solicitudes de mantenimiento y
+                    comunicación con los residentes de
+                    manera rápida, eficiente y segura.</p>
+            </div>
+
+            <button class="nested-accordion">Gestión Oportuna y Transparente</button>
+            <div class="nested-panel">
+                <p>Nuestro sistema no solo agiliza procesos,
+                    sino que también asegura la
+                    transparencia en todas las operaciones.
+                    Los clientes tienen acceso a información
+                    clara y actualizada, lo que genera
+                    confianza y fortalece nuestra relación
+                    con cada comunidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Funcionalidad de acordeón principal
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', () => {
+                // Cerrar todos los demás
+                accordions.forEach(acc => {
+                    if (acc !== accordion) {
+                        acc.classList.remove('active');
+                        acc.nextElementSibling.style.display = 'none';
+                    }
+                });
+                // Alternar el seleccionado
+                accordion.classList.toggle('active');
+                const panel = accordion.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        // Funcionalidad de subacordeón
+        const nestedAccordions = document.querySelectorAll('.nested-accordion');
+        nestedAccordions.forEach(nestedAccordion => {
+            nestedAccordion.addEventListener('click', () => {
+                // Cerrar todos los demás
+                nestedAccordions.forEach(nAcc => {
+                    if (nAcc !== nestedAccordion) {
+                        nAcc.classList.remove('active');
+                        nAcc.nextElementSibling.style.display = 'none';
+                    }
+                });
+                // Alternar el seleccionado
+                nestedAccordion.classList.toggle('active');
+                const panel = nestedAccordion.nextElementSibling;
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+</html>
