@@ -104,14 +104,14 @@ main {
 
 .container-tarjetas {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .tarjeta {
-    width: 100%;
+    width: 35%;
     height: 100%;
+    margin: 0 50px;
     background-color: #E6F0FA;
     border-radius: 20px;
     border: 1px solid #B0D4F1;

@@ -10,59 +10,7 @@
     </head>
 
     <body>
-        <header>
-            <div class="header">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="../IMG/LOGO-ADOBE-ADMON.webp"
-                            alt="Logo de Adobe Admon Administración Inmobiliaria"
-                            height="100%">
-                    </a>
-                </div>
-
-                <button id="abrir">
-                    <label id="menu-icon">&#9776;</label>
-                </button>
-
-                <nav id="navegation">
-                    <ul id="menu-list">
-                        <li class="items submenu-parent">
-                            <a>Servicios
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    width="12" height="12"
-                                    fill="currentColor"
-                                    class="bi bi-caret-down-fill"
-                                    viewBox="0 0 16 16">
-                                    <path
-                                        d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-                                </svg>
-                            </a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href>Asesoramiento</a>
-                                </li>
-
-                                <li>
-                                    <a href>Gestión</a>
-                                </li>
-
-                                <li>
-                                    <a href>Mantenimiento</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="items">
-                            <a href="/HTML/nosotros.html">Nosotros</a>
-                        </li>
-
-                        <li class="items">
-                            <a href="iniciar-sesion.html">Iniciar sesión</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <div id="headers"></div>
 
         <main>
             <section class="introduction">
@@ -127,9 +75,8 @@
                 <div class="panel">
                     <p>Escuchamos y entendemos sus necesidades específicas para
                         ofrecer soluciones a medida que se adapten a los
-                        desafíos únicos de su condominio. Desde la resolución de
-                        conflictos hasta la optimización de recursos, estamos a
-                        su lado en cada paso del camino.</p>
+                        desafíos únicos de su condominio. Promoviendo la solución de
+                        conflictos hasta la optimización de recursos.</p>
                 </div>
 
                 <button class="accordion"><span class="icon">📂</span>Gestión
@@ -153,10 +100,9 @@
                 <button class="accordion"><span class="icon">📊</span>Asistencia
                     en la Toma de Decisiones</button>
                 <div class="panel">
-                    <p>Acompañamos a los comités de administración y juntas de
-                        vecinos, proporcionando análisis y perspectivas que
-                        faciliten la toma de decisiones clave para el desarrollo
-                        de la comunidad.</p>
+                    <p>Acompañamos a los comités de vigilancia o asambleas condóminos, proporcionando análisis y perspectivas que
+                        faciliten la toma de decisiones clave para
+                        la comunidad.</p>
                 </div>
 
                 <!-- Botón de Llamada a la Acción -->
@@ -165,72 +111,7 @@
             </section>
         </main>
 
-        <footer>
-            <div id="footer">
-                <div id="contacto-privacidad">
-                    <div id="redes">
-                        <h3>
-                            Redes Sociales:
-                        </h3>
-
-                        <div id="container-icon">
-                            <a href="https://www.facebook.com/AdobeAdmon">
-                                <img src="../IMG/icons/facebook.png"
-                                    class="icon"
-                                    alt="Facebook icon Adobe Administración">
-                            </a>
-
-                            <a
-                                href="https://www.instagram.com/adobeadmon?igsh=YmFhbWVidjdvdXFt">
-                                <img src="../IMG/icons/instagram.png"
-                                    class="icon"
-                                    alt="Facebook icon Adobe Administración">
-                            </a>
-                        </div>
-                    </div>
-
-                    <div id="privacidad">
-                        <h3>
-                            Aviso legal
-                        </h3>
-
-                        <a href="HTML/aviso_de_privacidad.html">
-                            Politicas de Privacidad
-                        </a>
-                    </div>
-
-                    <div id="contacto">
-                        <h3>
-                            Contacto
-                        </h3>
-
-                        <!--<span>
-                            <img src="IMG/icons/marcador-de-posicion.png"
-                                class="icon" alt>
-                            Direccion
-                        </span>-->
-                        <span>
-                            <img src="../IMG/icons/correo.png" class="icon" alt>
-                            administracion@adobeadmon.com
-                        </span>
-
-                        <span>
-                            <img src="../IMG/icons/whatsapp.png" class="icon"
-                                alt>
-                            <a
-                                href="https://api.whatsapp.com/send/?phone=525513198352&text&type=phone_number&app_absent=0"
-                                target="_blank">
-                                +52 55 1319 8352
-                            </a>
-                        </span>
-                    </div>
-                </div>
-
-                <div id="marca-registrada">
-                    <p>© 2024 Adobe Bienes Raíces S.A de C.V</p>
-                </div>
-            </div>
-        </footer>
+        <div id="footers"></div>
 
         <script type="module" src="../JS/main.js"></script>
         <script type="module" src="../JS/contacto.js"></script>

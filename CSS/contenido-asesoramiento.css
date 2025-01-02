@@ -76,6 +76,8 @@ main {
     margin: 2rem auto;
     background-color: rgba(255, 255, 255, 0.3);
     border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
 .cabecera {
@@ -155,9 +157,9 @@ h3{
 }
 
 .cta-button {
-    background-color: #e74c3c;
-    color: white;
-    font-size: 1.1rem;
+    background: linear-gradient(to bottom right, #0059ff, #00cfff, #87e1ff);
+    color: var(--text-hover-color);
+    font-size: var(--title-h3);
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;

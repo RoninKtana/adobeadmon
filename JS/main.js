@@ -1,98 +1,133 @@
-/*------------------------------------------*/
-/*------------------Header------------------*/
-/*------------------------------------------*/
-document.getElementById("abrir").addEventListener("click", function () {
-  document.getElementById("navegation").classList.toggle("open");
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializar todas las funcionalidades
+  initHeader();
+  initCarousel();
+  initAccordion();
 });
 
-// Mostrar u ocultar el submenú en móviles al hacer clic
-document.querySelectorAll(".submenu-parent > a").forEach((item) => {
-  item.addEventListener("click", function (event) {
-    const submenu = this.nextElementSibling; // El submenú correspondiente
-    const parent = this.parentElement; // El item del menú
-
-    // Si el submenú ya está abierto, lo cerramos, si no, lo abrimos
-    if (submenu.style.display === "block") {
-      submenu.style.display = "none";
-      parent.classList.remove("open");
-      parent.classList.remove("activate");
+/**
+ * Carga contenido HTML de forma dinámica en un elemento con un ID dado.
+ * @param {string} id - ID del elemento donde se insertará el contenido.
+ * @param {string} url - URL del archivo HTML a cargar.
+ */
+async function loadHTML(id, url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Error al cargar ${url}: ${response.status}`);
+    const html = await response.text();
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.innerHTML = html;
     } else {
-      submenu.style.display = "block";
-      parent.classList.add("open");
-      parent.classList.add("activate");
+      console.warn(`Elemento con ID ${id} no encontrado.`);
     }
-
-    // Prevenir el comportamiento predeterminado del enlace
-    event.preventDefault();
-  });
-});
-/*------------------------------------------*/
-/*------------------Header------------------*/
-/*------------------------------------------*/
-
-
-
-
-
-/*------------------------------------------*/
-/*----------------carousel------------------*/
-/*------------------------------------------*/
-const carouselSlide = document.querySelector(".carousel-slide");
-const images = document.querySelectorAll(".carousel-slide img");
-const totalImages = images.length;
-let currentIndex = 0;
-let imageWidth = images[0].clientWidth; // Obtenemos el ancho de la primera imagen
-
-// Función para mover el carrusel
-function slideCarousel() {
-  currentIndex++;
-
-  if (currentIndex === totalImages) {
-    // Cuando llegamos a la última imagen, reiniciamos el carrusel
-    carouselSlide.style.transition = "none"; // Sin transición para reiniciar
-    currentIndex = 0; // Volver al primer índice
-    carouselSlide.style.transform = `translateX(0)`; // Regresamos al inicio
-    setTimeout(() => {
-      carouselSlide.style.transition = "transform 0.5s ease-in-out"; // Restauramos la transición
-    }, 50); // Pequeño retraso para evitar el salto visible
-  } else {
-    // Desplazamos el carrusel a la siguiente imagen
-    const offset = -currentIndex * imageWidth;
-    carouselSlide.style.transform = `translateX(${offset}px)`;
+  } catch (error) {
+    console.error("Error cargando contenido HTML:", error);
   }
 }
 
-// Iniciar el carrusel
-setInterval(slideCarousel, 5000); // Cambiar cada 5 segundos
+// Carga los elementos dinámicos
+loadHTML("headers", "header.html");
+loadHTML("footers", "footer.html");
 
-// Actualizar el ancho de la imagen al cambiar el tamaño de la ventana
-window.addEventListener("resize", () => {
-  imageWidth = images[0].clientWidth; // Actualiza el ancho de la imagen
-});
-/*------------------------------------------*/
-/*----------------carousel------------------*/
-/*------------------------------------------*/
+/**
+ * Inicializa la funcionalidad del header.
+ */
+function initHeader() {
+  const abrirBtn = document.getElementById("abrir");
+  const navegation = document.getElementById("navegation");
 
+  if (abrirBtn && navegation) {
+    abrirBtn.addEventListener("click", () => {
+      navegation.classList.toggle("open");
+    });
 
+    document.querySelectorAll(".submenu-parent > a").forEach((item) => {
+      item.addEventListener("click", (event) => {
+        event.preventDefault();
+        const submenu = item.nextElementSibling;
+        const parent = item.parentElement;
 
+        if (submenu) {
+          const isVisible = submenu.style.display === "block";
+          submenu.style.display = isVisible ? "none" : "block";
+          parent.classList.toggle("open", !isVisible);
+          parent.classList.toggle("activate", !isVisible);
+        }
+      });
+    });
+  } else {
+    console.warn("Elementos del header no encontrados.");
+  }
+}
 
+/**
+ * Inicializa el carrusel.
+ */
+function initCarousel() {
+  const carouselSlide = document.querySelector(".carousel-slide");
+  const images = document.querySelectorAll(".carousel-slide img");
+  if (!carouselSlide || images.length === 0) {
+    console.warn("Elementos del carrusel no encontrados.");
+    return;
+  }
 
+  let currentIndex = 0;
+  let imageWidth = images[0].clientWidth;
 
-/*------------------------------------------*/
-/*----------------acordeon------------------*/
-/*------------------------------------------*/
-var acc = document.getElementsByClassName("accordion");
-for (var i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
+  function slideCarousel() {
+    currentIndex++;
+    if (currentIndex === images.length) {
+      carouselSlide.style.transition = "none";
+      currentIndex = 0;
+      carouselSlide.style.transform = `translateX(0)`;
+      setTimeout(() => {
+        carouselSlide.style.transition = "transform 0.5s ease-in-out";
+      }, 50);
     } else {
-      panel.style.display = "block";
+      const offset = -currentIndex * imageWidth;
+      carouselSlide.style.transform = `translateX(${offset}px)`;
     }
+  }
+
+  setInterval(slideCarousel, 5000);
+
+  window.addEventListener("resize", () => {
+    imageWidth = images[0].clientWidth;
   });
 }
-/*------------------------------------------*/
-/*----------------acordeon------------------*/
-/*------------------------------------------*/
+
+/**
+ * Inicializa el acordeón.
+ */
+// Funcionalidad de acordeón principal
+const accordions = document.querySelectorAll('.accordion');
+accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => {
+        // Cerrar todos los demás
+        accordions.forEach(acc => {
+            if (acc !== accordion) {
+                acc.nextElementSibling.style.display = 'none';
+            }
+        });
+        // Alternar el seleccionado
+        const panel = accordion.nextElementSibling;
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+// Funcionalidad de subacordeón
+const nestedAccordions = document.querySelectorAll('.nested-accordion');
+nestedAccordions.forEach(nestedAccordion => {
+    nestedAccordion.addEventListener('click', () => {
+        // Cerrar todos los demás
+        nestedAccordions.forEach(nAcc => {
+            if (nAcc !== nestedAccordion) {
+                nAcc.nextElementSibling.style.display = 'none';
+            }
+        });
+        // Alternar el seleccionado
+        const panel = nestedAccordion.nextElementSibling;
+        panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+    });
+});

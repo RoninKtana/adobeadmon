@@ -51,7 +51,7 @@ header{
 }
 
 /* Estilos para el icono del menú en dispositivos móviles */
-#abrir, #cerrar {
+#abrir{
     background: none;
     border: none;
     font-size: 2em;
