@@ -103,7 +103,7 @@ main {
     border: 2px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
-    color: var(--text-color);
+    color: var(--text-hover-color);
 }
 
 .input-group input:focus {
